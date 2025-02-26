@@ -504,3 +504,13 @@ def weighted_f1_score(items):
     preds = unzipped_list[1]
     fscore = f1_score(golds, preds, average="weighted")
     return fscore
+
+def doc_to_text(doc) -> str:
+    """Formats the input similar to the original PubMedQA structure."""
+    ctxs = "\n".join(doc["CONTEXTS"])  # Join multiple context sentences if needed
+    return "الملخص: {}\nالسؤال: {}\nالإجابة:".format(
+        ctxs,  # Equivalent to "CONTEXTS" from the dataset
+        doc["QUESTION"],  # Equivalent to "QUESTION" from the dataset
+    )
+
+

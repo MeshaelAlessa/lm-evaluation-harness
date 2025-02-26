@@ -1,0 +1,120 @@
+{
+  "results": {
+    "medmcqa_ar": {
+      "alias": "medmcqa_ar",
+      "acc,none": 0.6,
+      "acc_stderr,none": 0.24494897427831783,
+      "acc_norm,none": 0.6,
+      "acc_norm_stderr,none": 0.24494897427831783
+    }
+  },
+  "group_subtasks": {
+    "medmcqa_ar": []
+  },
+  "configs": {
+    "medmcqa_ar": {
+      "task": "medmcqa_ar",
+      "dataset_path": "BiMediX/medmcqa-arabic",
+      "training_split": "train",
+      "doc_to_text": "def doc_to_text(doc) -> str:\n    option_choices = {\n        \"A\": doc[\"opa\"],\n        \"B\": doc[\"opb\"],\n        \"C\": doc[\"opc\"],\n        \"D\": doc[\"opd\"],\n    }\n\n    prompt = \"السؤال: \" + doc[\"question\"] + \"\\nالخيارات:\\n\"\n    for choice, option in option_choices.items():\n        prompt += f\"{choice.upper()}. {option}\\n\"\n    prompt += \"الإجابة:\"\n    return prompt\n",
+      "doc_to_target": "def doc_to_target(doc) -> str:\n    return doc[\"cop\"]\n",
+      "unsafe_code": false,
+      "doc_to_choice": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        },
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "{{question}}"
+    }
+  },
+  "versions": {
+    "medmcqa_ar": "Yaml"
+  },
+  "n-shot": {
+    "medmcqa_ar": 0
+  },
+  "higher_is_better": {
+    "medmcqa_ar": {
+      "acc": true,
+      "acc_norm": true
+    }
+  },
+  "n-samples": {
+    "medmcqa_ar": {
+      "original": 4183,
+      "effective": 5
+    }
+  },
+  "config": {
+    "model": "hf",
+    "model_args": "pretrained=C:\\Users\\MeshaelAlessa\\OneDrive - Lean for Business Services\\Desktop\\tinyllama,trust_remote_code=True,device_map=cpu",
+    "model_num_parameters": 1100048384,
+    "model_dtype": "torch.bfloat16",
+    "model_revision": "main",
+    "model_sha": "",
+    "batch_size": "1",
+    "batch_sizes": [],
+    "device": "cpu",
+    "use_cache": null,
+    "limit": 0.001,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "96f5e58f",
+  "date": 1740390377.3839827,
+  "pretty_env_info": "PyTorch version: 2.6.0+cpu\nIs debug build: False\nCUDA used to build PyTorch: None\nROCM used to build PyTorch: N/A\n\nOS: Microsoft Windows 11 Enterprise (10.0.22631 64-bit)\nGCC version: Could not collect\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: N/A\n\nPython version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)] (64-bit runtime)\nPython platform: Windows-11-10.0.22631-SP0\nIs CUDA available: False\nCUDA runtime version: No CUDA\nCUDA_MODULE_LOADING set to: N/A\nGPU models and configuration: No CUDA\nNvidia driver version: No CUDA\ncuDNN version: No CUDA\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nName: AMD Ryzen 7 5825U with Radeon Graphics         \nManufacturer: AuthenticAMD\nFamily: 107\nArchitecture: 9\nProcessorType: 3\nDeviceID: CPU0\nCurrentClockSpeed: 2000\nMaxClockSpeed: 2000\nL2CacheSize: 4096\nL2CacheSpeed: None\nRevision: 20480\n\nVersions of relevant libraries:\n[pip3] mypy==1.15.0\n[pip3] mypy-extensions==1.0.0\n[pip3] numpy==2.2.2\n[pip3] torch==2.6.0\n[conda] Could not collect",
+  "transformers_version": "4.48.3",
+  "upper_git_hash": null,
+  "tokenizer_pad_token": [
+    "</s>",
+    "2"
+  ],
+  "tokenizer_eos_token": [
+    "</s>",
+    "2"
+  ],
+  "tokenizer_bos_token": [
+    "<s>",
+    "1"
+  ],
+  "eot_token_id": 2,
+  "max_length": 2048,
+  "task_hashes": {
+    "medmcqa_ar": "ec70efb152bbe8ea8f19fbc26ba3c58c8444f940a943d094d8efc02b0f889733"
+  },
+  "model_source": "hf",
+  "model_name": "C:\\Users\\MeshaelAlessa\\OneDrive - Lean for Business Services\\Desktop\\tinyllama",
+  "model_name_sanitized": "C__Users__MeshaelAlessa__OneDrive - Lean for Business Services__Desktop__tinyllama",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 9150.6596019,
+  "end_time": 9245.5931184,
+  "total_evaluation_time_seconds": "94.93351649999931"
+}

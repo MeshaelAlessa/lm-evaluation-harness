@@ -673,9 +673,8 @@ class Task(abc.ABC):
         elif self.has_validation_docs():
             return self.validation_docs()
         else:
-            raise ValueError(
-                f"Task dataset (path={self.DATASET_PATH}, name={self.DATASET_NAME}) must have valid or test docs!"
-            )
+            eval_logger.warning("No test or validation set found. Using training set as test set.")
+            return self.training_docs()
 
     def doc_iterator(
         self, *, rank: int = 0, limit: Union[int, None] = None, world_size: int = 1

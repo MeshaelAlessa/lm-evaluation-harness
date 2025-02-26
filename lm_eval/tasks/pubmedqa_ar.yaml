@@ -1,0 +1,17 @@
+task: pubmedqa_ar
+dataset_path: BiMediX/pubmedqa-test_arabic
+dataset_name: null
+output_type: multiple_choice
+training_split: train
+validation_split: null
+test_split: null
+doc_to_text: !function preprocess_pubmedqa_ar.doc_to_text
+doc_to_target: final_decision
+doc_to_choice: ["نعم", "لا", "ربما"]
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0
+

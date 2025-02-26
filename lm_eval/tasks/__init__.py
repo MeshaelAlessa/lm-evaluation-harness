@@ -11,6 +11,14 @@ from lm_eval.api.task import ConfigurableTask, Task
 from lm_eval.evaluator_utils import get_subtask_list
 
 
+from lm_eval.api.task import Task
+
+from lm_eval.api.registry import TASK_REGISTRY
+
+
+
+
+
 GROUP_ONLY_KEYS = list(GroupConfig().to_dict().keys())
 
 
