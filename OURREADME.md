@@ -1,6 +1,6 @@
 # LM Evaluation Harness - Our Tasks
 
-This repository contains custom evaluation tasks for the **LM Evaluation Harness** framework. Follow the steps below to set up and run the tasks.
+This repository contains custom evaluation tasks *Benchmarks in Arabic* for the **LM Evaluation Harness** framework. Follow the steps below to set up and run the tasks.
 
 ---
 
@@ -121,4 +121,4 @@ Specifies where the evaluation results will be saved.
 Enables logging of individual samples.
 
 
-- Contact me,*Meshael Alessa*, if you have any issues setting up.
+- Contact me, *Meshael Alessa*, if you have any issues setting up.
