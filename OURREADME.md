@@ -66,7 +66,7 @@ To run the evaluation on a different model, **replace** `MODEL_PATH` in the comm
 
 - A **local model path** (if downloaded):
   ```powershell
-  pretrained=C:\Users\YourName\Desktop\your_model
+  pretrained=path\to\the\model
   ```
 - A **Hugging Face model name** (for online models):
   ```powershell
@@ -89,14 +89,14 @@ This specifies a Hugging Face (hf) model type, if you're using a different model
 2️ --model_args
 This argument configures how the model is loaded. The value inside "..." sets up the Hugging Face model.
 
-* Parameters Inside --model_args
-- pretrained=MODEL_PATH
+Parameters Inside --model_args
+- pretrained=MODEL_PATH:
 Specifies the path or Hugging Face model name.
 
-- trust_remote_code=True
+- trust_remote_code=True:
 Required if the model has custom code that needs to be executed safely.
 
-- device_map=cpu
+- device_map=cpu:
 I used this because I dont have a gpu, you can switch to GPU usage and replace cpu. it will automatically assign the model to CUDA if available, or CPU if no GPU is detected.
 
 3️ --tasks TASK_NAME
@@ -121,4 +121,4 @@ Specifies where the evaluation results will be saved.
 Enables logging of individual samples.
 
 
-- Contact me **Meshael Alessa* if you have any issues setting up.
+- Contact me,*Meshael Alessa*, if you have any issues setting up.
