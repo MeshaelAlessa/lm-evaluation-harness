@@ -80,16 +80,20 @@ python -m lm_eval --model hf --model_args "pretrained=meta-llama/Llama-2-7b-hf,t
 ---
 
 ## Notes
-to see all tasks, run : python -m lm_eval --tasks list
+to see all tasks, run: 
+```powershell
+python -m lm_eval --tasks list
+```
 
-- Explanation of the arguments in the commands:
-1️ --model hf
+**Explanation of the arguments in the commands**
+
+**1️ --model hf**
 This specifies a Hugging Face (hf) model type, if you're using a different model type, change this.
 
-2️ --model_args
+**2️ --model_args**
 This argument configures how the model is loaded. The value inside "..." sets up the Hugging Face model.
 
-Parameters Inside --model_args
+*Parameters Inside model_args*
 - pretrained=MODEL_PATH:
 Specifies the path or Hugging Face model name.
 
@@ -99,25 +103,25 @@ Required if the model has custom code that needs to be executed safely.
 - device_map=cpu:
 I used this because I dont have a gpu, you can switch to GPU usage and replace cpu. it will automatically assign the model to CUDA if available, or CPU if no GPU is detected.
 
-3️ --tasks TASK_NAME
+**3️ --tasks TASK_NAME**
 Defines which evaluation task to run. Like: --tasks pubmedqa_ar
 
-4️ --device
+**4️ --device**
 Specifies the computing device for evaluation, could be cpu or CUDA
 
 
-5️ --batch_size
+**5️ --batch_size**
 Controls how many samples are processed at once.
 
-6️ --limit 0.001
+**6️ --limit 0.001**
 Controls how much of the dataset to use.
 0.001 means use only 0.1% of the data.
 If you want to use the full dataset, remove this argument.
 
-7️ --output_path ./results
+**7️ --output_path ./results**
 Specifies where the evaluation results will be saved.
 
-8️ --log_samples
+**8️ --log_samples**
 Enables logging of individual samples.
 
 
