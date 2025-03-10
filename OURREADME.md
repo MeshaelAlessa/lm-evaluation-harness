@@ -78,9 +78,10 @@ For example:
 python -m lm_eval --model hf --model_args "pretrained=meta-llama/Llama-2-7b-hf,trust_remote_code=True,device_map=cpu" --tasks pubmedqa_ar --device cpu --batch_size 1 --limit 0.001 --output_path ./results --log_samples
 ```
 ---
-## 5. To Run Multiple Tasks
-you can run more than one task at once by specifying them in comma-separated format using the --tasks argument
-for example: **dont use spaces;)**
+## 5. Running Multiple Tasks
+you can run more than one task at once by specifying the tasks in comma-separated format using the --tasks argument **dont use spaces between them;)**.
+
+for example: 
 ```powershell
 python -m lm_eval --model hf --model_args "pretrained=MODEL_PATH,trust_remote_code=True,device_map=cpu" --tasks mmlu_professional_medicine_ar,pubmedqa_ar,medqa_ar,medmcqa_ar --device cpu --batch_size 1 --limit 0.001 --output_path ./results --log_samples
 ```
